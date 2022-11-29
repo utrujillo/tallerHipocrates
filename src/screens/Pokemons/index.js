@@ -1,10 +1,10 @@
 import {View, Text, TextInput, TouchableOpacity, ImageBackground} from 'react-native'
 import usePokemons from '../../hooks/Pokemons/usePokemons'
+import CardPokemon from '../../components/CardPokemon'
 import styles from './styles'
 
 const Pokemons = () => {
   const { pokemons } = usePokemons()
-  console.log( pokemons )
   const imageFilter = require('../../../assets/pokemons/horizontal.png')
 
   return (
@@ -15,7 +15,13 @@ const Pokemons = () => {
           <ImageBackground source={imageFilter} style={styles.image}></ImageBackground>
         </TouchableOpacity>
       </View>
-      <Text>Pokemones!!</Text>
+
+      <View style={styles.wrapper_pokemons}>
+        { 
+          pokemons?.map( pokemon => <CardPokemon key={pokemon?.id} pokemon={pokemon} /> )
+        }
+      </View>
+      
     </View>
   )
 }
