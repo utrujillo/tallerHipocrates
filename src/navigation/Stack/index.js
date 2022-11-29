@@ -7,8 +7,8 @@ const Stack = createNativeStackNavigator()
 const CustomStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name='Pokemons' component={Pokemons} />
       <Stack.Screen name='Login' component={Login} />
+      <Stack.Screen name='Pokemons' component={Pokemons} />
     </Stack.Navigator>
   )
 }

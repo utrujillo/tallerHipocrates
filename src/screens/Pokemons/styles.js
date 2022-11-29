@@ -4,14 +4,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFFFFF',
-    paddingHorizontal: 20,
-    paddingTop: 20
+    paddingTop: 40
   },
   wrapper_search: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 10
+    marginBottom: 10,
+    paddingHorizontal: 20
   },
   input: {
     borderColor: '#0DFFDA',
@@ -26,9 +26,6 @@ const styles = StyleSheet.create({
     flexShrink: 0,
     marginRight: 20
   },
-  iconFilter: {
-    alignItems: 'flex-right'
-  },
   image: {
     width: 42,
     height: 42
@@ -37,7 +34,25 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    paddingHorizontal: 20
+  },
+  wrapper_close_session: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FF0000',
+    color: '#FFF',
+    height: 62,
+    padding: 10,
+  },
+  pokeball: {
+    width: 24,
+    height: 24
+  },
+  text_close_session: {
+    color: '#FFFFFF',
+    textAlign: 'center'
   }
 })
 
