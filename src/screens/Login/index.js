@@ -3,11 +3,9 @@ import styles from './styles'
 
 const bck = require('../../../assets/login/bg.png')
 
-const Login = () => {
-
-  const onClick = () => {
-    console.log('Presionado')
-  }
+const Login = (props) => {
+  const { navigation } = props
+  const onClick = () => { navigation.navigate('Pokemons') }
 
   return (
     <View style={styles.container}>
