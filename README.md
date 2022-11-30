@@ -1,9 +1,8 @@
 # <p style='text-align: center;'> Taller de aplicaciones moviles utilizando React Native </p>
 ## <p style='text-align: right;'> Universidad Hipócrates, Noviembre 2022 </p>
 
+Autor: Ing. Uziel Trujillo Colón 👍
 
-<br />
-<br />
 <br />
 
 | Tabla de Contenidos |
