@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import {View, Text, ScrollView, TextInput, TouchableOpacity, ImageBackground} from 'react-native'
 import usePokemons from '../../hooks/Pokemons/usePokemons'
 import CardPokemon from '../../components/CardPokemon'
@@ -9,11 +10,19 @@ const Pokemons = (props) => {
   const imageFilter = require('../../../assets/pokemons/horizontal.png')
   const pokeball = require('../../../assets/pokemons/pokeball.png')
   const closeSession = () => { navigation.navigate('Login') }
+  const [searchText, setSearchText] = useState('')
+  const [resultSearch, setResultSearch] = useState([])
+
+  useEffect( () => {
+    setResultSearch( pokemons.filter( pokemon => pokemon.name.includes( searchText ) ) )
+  }, [searchText] )
+
+  const displayPokemons = searchText.length > 0 ? resultSearch : pokemons
 
   return (
     <View style={styles.container}>
       <View style={styles.wrapper_search}>
-        <TextInput style={styles.input} placeholder='Buscar Pokemon...' />
+        <TextInput style={styles.input} placeholder='Buscar Pokemon...' onChangeText={text => setSearchText(text)} />
         <TouchableOpacity>
           <ImageBackground source={imageFilter} style={styles.image}></ImageBackground>
         </TouchableOpacity>
@@ -22,7 +31,7 @@ const Pokemons = (props) => {
       <ScrollView>
         <View style={styles.wrapper_pokemons}>
           { 
-            pokemons?.map( pokemon => <CardPokemon key={pokemon?.id} pokemon={pokemon} /> )
+            displayPokemons?.map( pokemon => <CardPokemon key={pokemon?.id} pokemon={pokemon} /> )
           }
         </View>
       </ScrollView>

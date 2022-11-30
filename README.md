@@ -15,6 +15,7 @@ Autor: Ing. Uziel Trujillo Colón 👍
 <div style='text-align: justify;'>
 Clonar el proyecto realizando los siguientes pasos
 </div>
+
 ```
 git clone https://github.com/utrujillo/tallerHipocrates.git
 cd tallerHipocrates
